@@ -1,0 +1,38 @@
+{
+  "name": "own_bimed",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "date-fns": "2.0.0-alpha.23",
+    "libphonenumber-js": "^1.9.21",
+    "moment": "^2.29.1",
+    "next": "11.0.0",
+    "node-sass": "5.0.0",
+    "react": "17.0.2",
+    "react-content-loader": "^6.0.3",
+    "react-datepicker": "2.0.0",
+    "react-dom": "17.0.2",
+    "react-phone-input-2": "^2.14.0",
+    "react-redux": "^7.2.4",
+    "react-share": "^4.4.0",
+    "react-slick": "^0.28.1",
+    "react-yandex-maps": "^4.6.0",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "eslint": "7.29.0",
+    "eslint-config-next": "11.0.0"
+  }
+}

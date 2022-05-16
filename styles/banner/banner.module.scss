@@ -1,0 +1,44 @@
+.bannerWrapper {
+  width: 100%;
+  background-color: #fff;
+  padding: 24px 0 64px 0;
+  @media (max-width: 992px) {
+    background-color: transparent;
+  }
+}
+.sliderWrapper {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 500px;
+
+  .slideItem {
+    height: 448px;
+
+    @media (max-width: 576px) {
+      height: 228px;
+    }
+    img {
+      height: 100%;
+    }
+  }
+  :global .slick-list {
+    max-height: 500px;
+    border-radius: 16px;
+    img {
+      width: 100%;
+    }
+  }
+  :global ul.slick-dots .slick-active button {
+    &:before {
+      color: #054EDB !important;
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+  :global ul.slick-dots button {
+    &:before {
+      color: #CDDAF1;
+      font-size: 8px;
+    }
+  }
+}

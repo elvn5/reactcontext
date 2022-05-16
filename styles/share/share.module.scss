@@ -1,0 +1,27 @@
+@import '/styles/mixins';
+.share {
+  margin-top: 24px;
+  >span {
+    margin-bottom: 8px;
+    display: block;
+    @include font(400, #8B96B1, 15px);
+    line-height: 150%;
+  }
+  button {
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    background-color: transparent;
+    border: 1px solid #D4E3FF;
+    border-radius: 8px;
+    transition: .1s background-color;
+    &:hover {
+      background-color: #054EDB;
+    }
+    img {
+      width: 21px;
+      height: 21px;
+      pointer-events: none;
+    }
+  }
+}

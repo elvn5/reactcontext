@@ -1,0 +1,25 @@
+@import "/styles/mixins";
+.wrapper {
+  width: 100%;
+  padding: 0 0 36px 0;
+  flex: 1;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 16px;
+  .faqWrapper {
+    width: calc(100% - 238px);
+    padding: 24px 16px;
+    background-color: #fff;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faqWrapper {
+    width: 100% !important;
+    background-color: transparent !important;
+  }
+}

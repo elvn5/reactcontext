@@ -1,0 +1,57 @@
+@import "/styles/mixins";
+.sidebar {
+  width: 18%;
+  min-width: 210px;
+  max-width: 210px;
+  padding: 24px 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  ul {
+    width: 100%;
+    border-bottom: 1px solid #D4E3FF;
+    padding-bottom: 20px;
+    li {
+      width: 100%;
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      >div {
+        display: flex;
+        align-items: center;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+      a {
+        @include font(400, #171717, 14px);
+        margin-left: 12px;
+      }
+      span {
+        padding: 4px 8px;
+        border-radius: 8px;
+        background-color: #FD9B08;
+        @include font(700, #fff, 13px);
+        line-height: 100%;
+      }
+      .activeLink {
+        color: #054EDB !important;
+        fill: #054EDB;
+      }
+    }
+  }
+  .logoutBtn {
+    border: none;
+    background: transparent;
+    margin-top: 20px;
+    padding-left: 0;
+    @include font(400, #E31B4B, 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,231 @@
+@import "/styles/mixins";
+
+.wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 10;
+}
+
+.closeContent {
+  animation: hideBlock .5s ease !important;
+}
+
+.content {
+  max-width: 400px;
+  min-width: 379px;
+  height: 100%;
+  padding: 36px 28px 0 24px;
+  background-color: #fff;
+  box-shadow: 0 24px 36px -9px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: showBlock .5s ease;
+  @media (max-width: 576px) {
+    min-width: 275px !important;
+  }
+
+  .closeBtn {
+    position: absolute;
+    width: 50px;
+    right: -34px;
+    top: 15%;
+    transform: rotate(180deg);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .desktopMenu {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .menu {
+    width: 100%;
+    h3 {
+      padding: 0 0 0 16px;
+      @include font(600, #181818, 16px);
+      line-height: 19px;
+      margin-top: 20px;
+    }
+    ul {
+      width: 100%;
+
+      li {
+        width: 100%;
+        min-height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 12px 4px 16px;
+        margin: 4px 0;
+        user-select: none;
+        cursor: pointer;
+
+        span {
+          @include font(400, #171717, 14px);
+          line-height: 125%;
+        }
+
+        img {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  .titleBack {
+    padding-left: 34px !important;
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      background-image: url("../../public/icons/dropdown-arrow.svg");
+      transform: rotate(90deg);
+    }
+  }
+
+  .title {
+    padding: 8px 32px 25px 16px;
+    border-bottom: 1px solid #E7E7E7;
+    user-select: none;
+
+    h4 {
+      @include font(400, #98949E, 15px);
+      line-height: 150%;
+    }
+  }
+}
+
+.mobileNav {
+  margin-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #D4E3FF;
+
+  .navItem {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 12px 4px 16px;
+
+    span, a {
+      @include font(500, #171717, 14px);
+      line-height: 125%;
+    }
+
+    img {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.modalsBtn {
+  padding: 16px 16px 0;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button {
+    padding: 8px 20px;
+    background: transparent;
+    border-radius: 16px;
+    width: 243px;
+    line-height: 150%;
+    &:first-child {
+      border: none;
+      background: #054EDB;
+      @include font(400, #fff, 14px);
+    }
+    &:last-of-type {
+      margin-top: 8px;
+      border: 1px solid #D4E3FF;
+      @include font(400, #032D80, 14px);
+    }
+  }
+
+  .switchLang {
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      margin: 0 6px;
+      line-height: 18px;
+    }
+    .activeLang {
+      @include font(500, #054EDB, 15px);
+    }
+    .defaultLang {
+      @include font(500, #8B96B1, 15px);
+    }
+  }
+
+  .phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    span {
+      margin: 0 3px;
+      line-height: 18px;
+      &:first-child {
+        @include font(400, #979797, 15px);
+      }
+      &:last-child {
+        @include font(500, #0C2037, 15px);
+      }
+    }
+  }
+}
+
+@keyframes showBlock {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hideBlock {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 40px));
+  }
+}
+
+@media (max-width: 992px) {
+  .desktopMenu {
+    display: none !important;
+  }
+  .mobileMenu {
+    display: block !important;
+  }
+  .content {
+    padding: 10px 0 0 0 !important;
+  }
+  .title {
+    padding: 18px 0 21px 16px;
+    border-bottom: 1px solid #D4E3FF !important;
+  }
+  .menu {
+    ul {
+      li {
+        &:first-child {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}

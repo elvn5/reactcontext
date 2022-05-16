@@ -1,0 +1,30 @@
+@import "/styles/mixins";
+.wrapper {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.content {
+  max-width: 70%;
+  max-height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    @include font(700, #054EDB, 24px);
+    margin: 5px 0;
+  }
+  h4 {
+    @include font(700, #000, 24px);
+    margin: 10px 0;
+  }
+  a {
+    padding: 15px 60px;
+    @include font(500, #fff, 16px);
+    background-color: #054EDB;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
+}

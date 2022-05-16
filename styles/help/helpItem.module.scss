@@ -1,0 +1,43 @@
+@import "/styles/mixins";
+.item {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #D4E3FF;
+  border-radius: 16px;
+  user-select: none;
+  margin: 8px 0;
+  background-color: #fff;
+  cursor: pointer;
+  .heading {
+    width: 100%;
+    padding: 4px 12px 4px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      @include font(700, #171717, 15px);
+      line-height: 150%;
+    }
+    .downArrow {
+      transform: rotate(180deg);
+    }
+  }
+  .answer {
+    overflow-y: hidden;
+    animation: showAnswer .7s ease;
+    width: 95%;
+    p {
+      @include font(400, #181818, 14px);
+      line-height: 150%;
+    }
+  }
+
+}
+@keyframes showAnswer {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 1000px;
+  }
+}

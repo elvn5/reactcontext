@@ -1,0 +1,82 @@
+@import "/styles/mixins";
+.footer {
+  width: 100%;
+  padding: 20px 0 0 0;
+  background-color: #fff;
+}
+.topContent {
+  border-bottom: 1px solid #D4E3FF;
+  padding-bottom: 10px;
+}
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .column {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      @include font(normal, #98949E, 14px);
+      padding-bottom: 15px;
+      border-bottom: 1px solid #D4E3FF;
+      line-height: 17px;
+    }
+    li {
+      margin: 20px 0;
+      display: flex;
+      div, a {
+        @include font(normal, #171717, 14px);
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        div {
+          margin-right: 10px;
+        }
+        &:hover {
+          color: #054EDB;
+        }
+      }
+    }
+  }
+}
+.footerBottom {
+  padding: 25px 0 25px 30px;
+  span {
+    @include font(300, #8B96B1, 14px);
+    line-height: 17px;
+  }
+  a {
+    @include font(300, #032D80, 14px);
+    margin: 12px;
+    line-height: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .column {
+    width: 45%;
+    padding-left: 20px;
+    >h3 {
+      margin: 48px 0 16px 0;
+      padding-bottom: 16px !important;
+    }
+  }
+  .footerBottom {
+    display: flex;
+    flex-direction: column;
+    a {
+      margin: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    flex-direction: column;
+  }
+  .column {
+    width: 60%;
+  }
+}

@@ -1,0 +1,40 @@
+@import "/styles/mixins";
+
+.wrapper {
+  padding: 0 16px 36px 16px;
+  flex: 1;
+}
+
+.sales {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  h3 {
+    @include font(700, #181818, 20px);
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  .itemsWrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 -7px;
+  }
+
+  .itemWrapper {
+    width: 33.333%;
+    padding: 7px;
+
+    @media (max-width: 768px) {
+      width: 50%;
+    }
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+  }
+}

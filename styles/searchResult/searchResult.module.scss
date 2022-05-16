@@ -1,0 +1,77 @@
+@import "/styles/mixins";
+.wrapper {
+  width: 100%;
+  padding: 12px 0 24px 0;
+  position: relative;
+  flex: 1;
+}
+.content {
+  width: 100%;
+  padding: 24px 16px 32px 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  @media (max-width: 768px) {
+    background-color: transparent;
+  }
+  h3 {
+    @include font(700, #181818, 20px);
+    line-height: 24px;
+  }
+  .productsWrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    @media (max-width: 576px) {
+      justify-content: space-between;
+    }
+  }
+}
+
+.loupeWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 16px;
+    @media (max-width: 768px) {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  span {
+    display: block;
+    margin-top: 16px;
+    @include font(500, #8B96B1, 15px);
+    line-height: 150%;
+  }
+  p {
+    text-align: center;
+    @include font(400, #171717, 14px);
+    line-height: 150%;
+    max-width: 357px;
+    margin-top: 32px;
+  }
+  button {
+    border: none;
+    margin-top: 24px;
+    padding: 8px 20px;
+    background-color: #054EDB;
+    border-radius: 16px;
+    margin-top: 24px;
+    text-align: center;
+    @include font(400, #fff, 14px);
+    line-height: 150%;
+    min-width: 256px;
+  }
+}

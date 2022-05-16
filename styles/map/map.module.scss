@@ -1,0 +1,84 @@
+@import "/styles/mixins";
+.map {
+  width: 100%;
+  position: relative;
+
+  .modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      align-items: flex-end;
+    }
+
+    .modalContent {
+      padding: 20px;
+      border-radius: 16px;
+      background-color: #fff;
+      box-shadow: 0 24px 24px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        transform: none;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .address {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .schedule {
+        margin-top: 16px;
+        .blackText {
+          margin-left: 4px;
+        }
+      }
+      .numbers {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        span {
+          margin: 4px 0;
+        }
+      }
+      span {
+        line-height: 125%;
+      }
+      .greyText {
+        @include font(400, #8B96B1, 14px);
+      }
+      .blackText {
+        @include font(400, #171717, 14px);
+      }
+    }
+  }
+  :global .ymaps-2-1-79-map-copyrights-promo, :global .ymaps-2-1-79-copyright {
+    display: none;
+  }
+}
+
+.closeModal {
+  display: none;
+  width: 100%;
+  max-width: 288px;
+  height: 44px;
+  padding: 8px 20px;
+  border-radius: 16px;
+  margin: 16px auto 0 auto;
+  background-color: #054EDB;
+  border: none;
+  @include font(400, #fff, 14px);
+  line-height: 150%;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

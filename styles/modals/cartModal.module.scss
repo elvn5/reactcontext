@@ -1,0 +1,231 @@
+@import "/styles/mixins";
+
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  z-index: 10;
+}
+
+.closeContent {
+  animation: hideBlock .5s ease !important;
+}
+
+.content {
+  position: relative;
+  max-width: 35%;
+  height: 100%;
+  padding: 32px 20px 24px 24px;
+  border-radius: 16px 0 0 16px;
+  background-color: #fff;
+  z-index: 3;
+  box-shadow: 0px 24px 36px -9px rgba(0, 0, 0, 0.1);
+  animation: showCart .5s ease-in-out;
+  .close {
+    position: absolute;
+    width: 35px;
+    left: -35px;
+    cursor: pointer;
+    box-shadow: 0px 24px 36px -9px rgba(0, 0, 0, 0.1);
+  }
+  h3 {
+    @include font(700, #181818, 24px);
+    line-height: 29px;
+  }
+}
+
+.products {
+  margin: 24px 0;
+}
+
+.cartScroll {
+  overflow-y: scroll;
+  height: calc(100% - 120px);
+  padding: 12px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    background: #EAF1FF;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 3px;
+    background: #B1C7FF;
+    border-radius: 10px;
+  }
+}
+
+.bottom {
+  padding: 16px 12px 20px;
+  border-radius: 0 0 0 16px;
+  background: #fff;
+  height: 120px;
+
+  .bottomInfo {
+    margin: 2px 0;
+    display: flex;
+    flex-direction: column;
+
+    div > span {
+      &:first-child {
+        @include font(500, #8B96B1, 12px);
+      }
+
+      &:last-child {
+        @include font(500, #171717, 12px);
+        margin: 0 8px;
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px 8px 16px;
+      background-color: #054EDB;
+      border: none;
+      border-radius: 16px;
+      margin-top: 12px;
+
+      span {
+        margin-left: 10px;
+        @include font(400, #fff, 13px);
+        line-height: 120%;
+      }
+    }
+  }
+}
+
+@keyframes hideBlock {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100% + 40px));
+  }
+}
+
+
+// ITEM
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #EAF1FF;
+  border-radius: 16px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+.itemImg {
+  width: 35%;
+  border-radius: 16px 0 0 16px;
+  min-width: 100px;
+  max-height: 144px;
+  img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.itemBody {
+  width: calc(65% - 10px);
+  padding: 12px 12px 12px 0;
+
+  h4 {
+    @include font(400, #171717, 13px);
+    line-height: 150%;
+    margin: 8px 0;
+  }
+
+  .itemPriceBlock {
+    margin: 12px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .itemPrice {
+      @include font(500, #8B96B1, 13px);
+    }
+
+    .itemPriceTotal {
+      @include font(700, #171717, 13px);
+    }
+  }
+
+  .calc {
+    margin: 12px 0;
+    display: flex;
+    justify-content: flex-start;
+
+    button {
+      width: 24px;
+      height: 24px;
+      background: transparent;
+      border: 1px solid #D4E3FF;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:last-child {
+        border: none;
+        background: radial-gradient(123.75% 123.75% at 12.5% 0%, #29B862 0%, #139246 100%);
+      }
+    }
+
+    span {
+      width: 43px;
+      height: 24px;
+      border: 1px solid #D4E3FF;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 5px;
+      @include font(700, #171717, 11px);
+    }
+
+    .minus {
+      width: 50%;
+      margin: 0 auto;
+      height: 2px;
+      background-color: #032D80;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    max-width: none;
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    width: 70%;
+  }
+}
+@media (max-width: 576px) {
+  .content {
+    width: 87%;
+  }
+}
+
+@keyframes showCart {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

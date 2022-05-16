@@ -1,0 +1,325 @@
+@import "/styles/mixins";
+.wrapper {
+  width: 100%;
+  padding-bottom: 24px;
+  flex: 1;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .profileWrapper {
+    position: relative;
+    width: calc(100% - 236px);
+    background-color: #fff;
+    padding: 24px 24px 36px 24px;
+    border-radius: 12px;
+    h3 {
+      @include font(700, #181818, 24px);
+      line-height: 29px;
+    }
+
+    form {
+      width: 316px;
+      .formItem {
+        margin: 8px 0;
+      }
+      input {
+        display: block;
+        width: 100%;
+        background: transparent;
+        border: 1px solid #D4E3FF;
+        border-radius: 16px !important;
+        padding: 12px 16px;
+        @include font(normal, #171717, 14px);
+        &::placeholder {
+          @include font(normal, #8B96B1, 14px);
+        }
+      }
+      .formBtn {
+        width: 100%;
+        margin-top: 12px;
+        padding: 8px 20px;
+        border-radius: 16px;
+        background-color: #054EDB;
+        border: none;
+        @include font(400, #fff, 14px);
+        line-height: 150%;
+        &:disabled {
+          background-color: #8B96B1;
+        }
+      }
+      h4 {
+        @include font(600, #171717, 18px);
+        line-height: 22px;
+        margin: 12px 0 2px 0;
+      }
+      .centerInput {
+        &::placeholder {
+          text-align: center;
+        }
+      }
+      span {
+        display: block;
+        @include font(400, #054EDB, 14px);
+        line-height: 150%;
+        margin-bottom: 24px;
+      }
+      .cancel {
+        width: 100%;
+        padding: 8px 20px;
+        border: 1px solid #D4E3FF;
+        border-radius: 16px;
+        margin: 12px 0 0 0;
+        @include font(400, #032D80, 14px);
+        background-color: transparent;
+        text-align: center;
+        cursor: pointer;
+      }
+      .centerP {
+        text-align: center;
+        margin: 24px 0 6px 0 !important;
+      }
+      .dateInputWrapper {
+        position: relative;
+        &::before {
+          content: url("../../public/icons/calendar-icon.svg");
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          top: calc(50% - 11px);
+          left: 10px;
+        }
+      }
+      >p {
+        @include font(400, #8B96B1, 14px);
+        line-height: 150%;
+        margin: 16px 0 24px 0;
+      }
+    }
+    .resend {
+      width: 316px;
+      border: 1px solid #8B96B1;
+      border-radius: 16px;
+      background-color: transparent;
+      padding: 8px 20px;
+      line-height: 150%;
+      @include font(400, #8B96B1, 14px);
+    }
+    .profileData {
+      display: flex;
+      .avatarWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 24px;
+        input[type=file] {
+          display: none;
+        }
+        .avatar {
+          width: 158px;
+          height: 158px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #D4E3FF;
+          border-radius: 50%;
+        }
+        label {
+          display: block;
+          margin-left: 14px;
+          width: 144px;
+          height: 32px;
+          padding: 8px 16px;
+          background: #054EDB;
+          border-radius: 16px;
+          white-space: nowrap;
+          @include font(400, #fff, 13px);
+          line-height: 120%;
+          user-select: none;
+          cursor: pointer;
+          margin-top: 18px;
+        }
+        .deleteBtn {
+          width: 144px;
+          height: 32px;
+          padding: 8px 16px;
+          border-radius: 16px;
+          border: 1px solid #D4E3FF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include font(400, #032D80, 13px);
+          line-height: 120%;
+          background-color: transparent;
+          margin-top: 10px;
+          margin-left: 14px;
+        }
+      }
+      .changeData {
+        margin-top: 44px;
+        h4 {
+          @include font(700, #181818, 15px);
+          line-height: 150%;
+        }
+      }
+    }
+    .qrCodeWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .qrCode {
+        width: 230px;
+        height: 230px;
+        border-radius: 16px;
+        border: 1px solid #D4E3FF;
+      }
+      .points {
+        margin-top: 32px;
+        width: 165px;
+        display: flex;
+
+        span {
+          margin: 0 6px;
+          &:first-child {
+            @include font(700, #fff, 18px);
+            padding: 8px 12px;
+            background: #FD9B08;
+            border-radius: 12px
+          }
+          &:last-child {
+            @include font(400, #8B96B1, 14px);
+            line-height: 125%;
+          }
+        }
+      }
+    }
+  }
+  :global .react-datepicker__header {
+    background-color: #fff;
+    padding: 10px 5px;
+    border: none;
+  }
+  :global .react-datepicker__day-names {
+    margin-top: 12px;
+    padding: 5px 16px;
+    background-color: #EAF1FF;
+    border-radius: 8px;
+  }
+  :global .react-datepicker__day-name {
+    @include font(500, #171717, 14px);
+    &:nth-child(6), &:nth-child(7) {
+      color:  #E31B4B !important;
+    }
+  }
+  :global .react-datepicker__day {
+    @include font(400, #171717, 14px);
+  }
+  :global .react-datepicker__day--outside-month {
+    color: #8B96B1 !important;
+  }
+  :global .react-datepicker__day--selected, :global .react-datepicker__day--keyboard-selected {
+    background-color: #054EDB !important;
+    color: #fff !important;
+  }
+}
+.modalWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.successModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  button {
+    width: 10%;
+    border: none;
+    background-color: #054EDB;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    &:last-child {
+      transform: rotate(180deg);
+    }
+  }
+  select {
+    background-color: #fff;
+    padding: 3px 5px;
+    border: 1px solid #D4E3FF;
+    border-radius: 8px;
+    @include font(normal, #171717, 14px);
+    outline: none;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #EAEEF4;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #BED1F5;
+    }
+    &:first-child {
+      width: 30%;
+    }
+    &:last-child {
+      width: 50%;
+    }
+    option {
+      @include font(400, #171717, 14px);
+      display: block;
+      padding: 5px 0;
+      margin: 10px 0;
+      border-radius: 8px;
+      &:checked, &:active {
+        background-color: #EAF1FF;
+        color: #171717;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .profileData {
+    flex-direction: column-reverse;
+  }
+  .qrCode {
+    margin-top: 19px;
+    width: 288px !important;
+    height: 288px !important;
+  }
+  .avatarWrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .profileWrapper {
+    form  {
+      width: 100% !important;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .profileWrapper {
+    width: 100% !important;
+  }
+  .wrapper {
+    background-color: #fff !important;
+  }
+}

@@ -1,0 +1,273 @@
+@import "/styles/mixins";
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 32px 32px 56px;
+  flex: 1;
+  @media (max-width: 576px) {
+    padding: 0;
+  }
+}
+.logo {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+.login {
+  background-image: url("../../public/login-bg.png");
+  h3 {
+    margin: 28px 0;
+    line-height: 24px;
+  }
+}
+.register {
+  background-image: url("../../public/register-bg.png");
+  h3 {
+    margin: 12px 0;
+    line-height: 24px;
+  }
+}
+.content {
+  max-width: 386px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  @media (max-width: 576px) {
+    height: auto !important;
+  }
+  h3 {
+    @include font(700, #181818, 20px);
+  }
+  .orText {
+    text-align: center;
+    @include font(500, #8B96B1, 14px);
+    margin: 8px 0;
+  }
+  form {
+    margin: 20px auto 0 auto;
+    .formItem {
+      margin: 8px 0;
+    }
+    input {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 1px solid #D4E3FF;
+      border-radius: 16px !important;
+      padding: 12px 16px;
+      @include font(normal, #171717, 14px);
+      &::placeholder {
+        @include font(normal, #8B96B1, 14px);
+      }
+    }
+    .formBtn {
+      width: 100%;
+      margin-top: 12px;
+      padding: 8px 20px;
+      border-radius: 16px;
+      background-color: #054EDB;
+      border: none;
+      @include font(400, #fff, 14px);
+      line-height: 150%;
+    }
+    .phoneVerify {
+      margin: 24px 0;
+      display: flex;
+      flex-direction: column;
+      span {
+        @include font(600, #171717, 18px);
+        line-height: 22px;
+      }
+      p {
+        @include font(400, #054EDB, 14px);
+        line-height: 150%;
+        margin-top: 2px;
+        cursor: pointer;
+      }
+    }
+    :global .react-datepicker__header {
+      background-color: #fff;
+      padding: 10px 5px;
+      border: none;
+    }
+    :global .react-datepicker__day-names {
+      margin-top: 12px;
+      padding: 5px 16px;
+      background-color: #EAF1FF;
+      border-radius: 8px;
+    }
+    :global .react-datepicker__day-name {
+      @include font(500, #171717, 14px);
+      &:nth-child(6), &:nth-child(7) {
+        color:  #E31B4B !important;
+      }
+    }
+    :global .react-datepicker__day {
+      @include font(400, #171717, 14px);
+    }
+    :global .react-datepicker__day--outside-month {
+      color: #8B96B1 !important;
+    }
+    :global .react-datepicker__day--selected, :global .react-datepicker__day--keyboard-selected {
+      background-color: #054EDB !important;
+      color: #fff !important;
+    }
+
+    :global .flag-dropdown {
+      background: transparent;
+      border: none;
+    }
+    :global .form-control {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+  }
+  .resend {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      @include font(400, #8B96B1, 14px);
+      line-height: 150%;
+    }
+    button {
+      width: 100%;
+      margin-top: 6px;
+      padding: 8px 20px;
+      border: 1px solid #8B96B1;
+      border-radius: 16px;
+      @include font(400, #8B96B1, 14px);
+      line-height: 150%;
+      background: transparent;
+    }
+  }
+}
+.mainLink {
+  text-align: right;
+  a {
+    @include font(400, #054EDB, 14px);
+  }
+}
+.registerLink {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #D4E3FF;
+  border-radius: 16px;
+  padding: 8px 20px;
+  @include font(normal, #032D80, 14px);
+  line-height: 150%;
+}
+.toLogin {
+  margin-bottom: 24px;
+  line-height: 150%;
+  @include font(400, #8B96B1, 14px);
+  a {
+    @include font(400, #054EDB, 14px);
+    line-height: 150%;
+    margin-left: 10px;
+  }
+}
+
+.dateHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  button {
+    width: 10%;
+    border: none;
+    background-color: #054EDB;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    &:last-child {
+      transform: rotate(180deg);
+    }
+  }
+  select {
+    background-color: #fff;
+    padding: 3px 5px;
+    border: 1px solid #D4E3FF;
+    border-radius: 8px;
+    @include font(normal, #171717, 14px);
+    outline: none;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #EAEEF4;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #BED1F5;
+    }
+    &:first-child {
+      width: 30%;
+    }
+    &:last-child {
+      width: 50%;
+    }
+    option {
+      @include font(400, #171717, 14px);
+      display: block;
+      padding: 5px 0;
+      margin: 10px 0;
+      border-radius: 8px;
+      &:checked, &:active {
+        background-color: #EAF1FF;
+        color: #171717;
+      }
+    }
+  }
+}
+.dateInputWrapper {
+  position: relative;
+  &::before {
+    content: url("../../public/icons/calendar-icon.svg");
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 11px);
+    left: 10px;
+  }
+}
+.header, .footer {
+  display: none;
+}
+@media (max-width: 768px) {
+  .content {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .register, .login {
+    background-image: none;
+    padding-top: 100px;
+  }
+  .logo {
+    display: none;
+  }
+  .mainLink {
+    display: none;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+  }
+  .header, .footer {
+    display: block;
+  }
+}

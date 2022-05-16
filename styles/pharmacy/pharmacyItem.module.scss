@@ -1,0 +1,111 @@
+@import "../mixins";
+.item {
+  width: calc(20% - 8px);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #EAF1FF;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 4px 0 4px;
+
+  @media (max-width: 1050px) {
+    width: calc(33.333% - 8px);
+  }
+  @media (max-width: 768px) {
+    width: calc(50% - 8px);
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+}
+.imageBlock {
+  position: relative;
+  padding-top: 66%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  .status {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    z-index: 2;
+    span {
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 8px;
+      @include font(700, #fff, 12px);
+      line-height: 125%;
+    }
+    .open {
+      background-color: #1D9F22;
+    }
+    .close {
+      background-color: #E31B4B;
+    }
+  }
+}
+
+.itemData {
+  padding: 12px 16px 20px 16px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+  .dataRow {
+    margin: 16px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    &:first-child {
+      flex-direction: column;
+      span {
+        margin-top: 4px;
+      }
+    }
+  }
+  span {
+    line-height: 125%;
+  }
+  .graySpan {
+    @include font(400, #8B96B1, 14px);
+    margin-right: 4px;
+  }
+  .blackSpan {
+      @include font(400, #171717, 14px);
+  }
+}
+.numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  span {
+    margin: 4px 0;
+  }
+}
+.showMap {
+  width: 100%;
+  margin-top: 16px;
+  background-color: transparent;
+  padding: 8px 24px 8px 20px;
+  border-radius: 16px;
+  border: 1px solid #D4E3FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+}

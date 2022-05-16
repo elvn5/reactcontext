@@ -1,0 +1,554 @@
+@import "/styles/mixins";
+
+.wrapper {
+  flex: 1;
+}
+
+.modalWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  position: relative;
+  align-items: flex-start;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.cart {
+  width: 65%;
+  padding: 12px 10px;
+  background-color: #fff;
+  border-radius: 16px;
+  @media (max-width: 768px) {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .cartHeading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    @media (max-width: 768px) {
+      margin-bottom: 0 !important;
+    }
+
+    > span {
+      padding: 8px 16px;
+      background-color: #D4E3FF;
+      border-radius: 16px;
+      @include font(400, #054EDB, 13px);
+      cursor: pointer;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    h3 {
+      @include font(700, #171717, 20px);
+      line-height: 24px;
+
+      span {
+        background: none;
+        padding: 0;
+        @include font(700, #8b96b1, 20px);
+      }
+    }
+  }
+}
+
+.right {
+  width: 33%;
+  border-radius: 16px;
+  position: sticky;
+  top: 12px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 10px;
+  }
+
+  .total {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 32px 38px 32px 24px;
+
+    h4 {
+      @include font(700, #171717, 20px);
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      width: 100%;
+      padding: 8px 20px;
+      border-radius: 16px;
+      background-color: #054EDB;
+      @include font(400, #fff, 14px);
+      cursor: pointer;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      padding: 8px 20px;
+      border-radius: 16px;
+      border: 1px solid #D4E3FF;
+      @include font(400, #032D80, 14px);
+    }
+
+    .totalInfo {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+
+      span {
+        &:first-child {
+          @include font(500, #8B96B1, 15px);
+        }
+        line-height: 150%;
+        &:last-child {
+          @include font(500, #171717, 15px);
+        }
+      }
+    }
+
+    .totalLine {
+      width: 100%;
+      height: 1px;
+      background-color: #D4E3FF;
+      margin: 20px 0;
+    }
+  }
+
+  .order {
+    background-color: #fff;
+    padding: 32px 38px 32px 24px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+
+    h4 {
+      @include font(700, #171717, 20px);
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D4E3FF;
+      height: auto;
+      border-radius: 16px;
+      margin: 4px 0;
+    }
+
+    :global .react-tel-input {
+      margin: 4px 0;
+    }
+
+    .whatsApp {
+      position: relative;
+
+      input {
+        padding-left: 45px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: 15px;
+        top: calc(50% - 15px);
+        background-image: url("../../public/icons/whatsapp.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    input[type=radio], input[type=checkbox] {
+      display: none;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D4E3FF;
+      resize: none;
+      border-radius: 16px;
+    }
+
+    > span {
+      @include font(400, #8B96B1, 13px);
+      display: block;
+      margin: 8px 0;
+    }
+
+    label {
+      width: 100%;
+      position: relative;
+      margin: 8px 0;
+      padding-left: 32px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      @include font(400, #171717, 14px);
+      user-select: none;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 0;
+      }
+    }
+
+    .activeLabel {
+      &:before {
+        background-image: url("../../public/icons/radio-button-checked.svg");
+        background-size: 100%;
+      }
+    }
+
+    .defaultLabel {
+      &:before {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #8B96B1;
+        box-sizing: border-box;
+        border-radius: 50%;
+      }
+    }
+    }
+  }
+
+  .pointsPayment {
+    display: flex;
+    align-items: flex-start;
+
+    p {
+      @include font(400, #636875, 13px);
+      width: 80%;
+      padding-left: 32px;
+      margin-top: 4px;
+    }
+
+    label {
+      padding-left: 32px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      margin-bottom: 0;
+
+      &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 0;
+        border-radius: 4px;
+      }
+    }
+
+    .activeCheckbox {
+      &:before {
+        background-color: #054EDB;
+        background-image: url("../../public/icons/check-mark.svg");
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .defaultCheckbox {
+      &:before {
+        border: 1px solid #8B96B1;
+      }
+    }
+  }
+
+  .points {
+    padding: 5px 8px;
+    border: 1px solid #D4E3FF;
+    margin: 8px 0;
+    border-radius: 8px;
+    @include font(500, #171717, 13px);
+  }
+
+
+//CART ITEM
+.item {
+  display: flex;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #EAF1FF;
+  border-radius: 16px;
+  margin: 12px 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.itemImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  margin-right: 12px;
+  min-width: 107px;
+  max-height: 224px;
+
+  img {
+    border-radius: 16px;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .trash {
+    border: none;
+    width: 100%;
+    height: 34px;
+    padding: 8px;
+    background-color: transparent;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 420px) {
+      display: flex;
+    }
+
+    span {
+      margin-left: 6px;
+      @include font(500, #6E7AA5, 13px);
+    }
+
+  }
+}
+
+.itemBody {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h4 {
+    @include font(400, #171717, 18px);
+    @media (max-width: 420px) {
+      font-size: 13px;
+      line-height: 125%;
+    }
+  }
+
+  .priceItem {
+    display: block;
+    margin-bottom: 12px;
+
+    .oldPrice {
+      @include font(400, #8B96B1, 15px);
+      text-decoration: line-through;
+      line-height: 18px;
+      @media (max-width: 420px) {
+        font-size: 12px;
+      }
+    }
+
+    span {
+      @include font(700, #171717, 15px);
+      margin-left: 10px;
+      line-height: 18px;
+      @media (max-width: 420px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  @media (max-width: 420px) {
+    align-items: center;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #D4E3FF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      border: none;
+      background: radial-gradient(123.75% 123.75% at 12.5% 0%, #29B862 0%, #139246 100%);
+    }
+
+    @media (max-width: 420px) {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border-radius: 6px !important;
+      margin: 2.5px;
+    }
+  }
+
+  .trash {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #D4E3FF;
+    margin-right: 8px;
+    @media (max-width: 420px) {
+      display: none;
+    }
+  }
+
+  .amount {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #D4E3FF;
+    border-radius: 10px;
+    @include font(700, #171717, 16px);
+    @media (max-width: 420px) {
+      width: 43px;
+      height: 24px;
+      padding: 0 !important;
+      border-radius: 6px !important;
+      font-size: 11px;
+    }
+  }
+}
+
+.minus {
+  width: 50%;
+  margin: 0 auto;
+  height: 2px;
+  background-color: #032D80;
+}
+
+.favorite {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #FFC9D6;
+  border-radius: 10px;
+  @media (max-width: 420px) {
+    width: 24px;
+    height: 24px;
+    padding: 4px !important;
+    border-radius: 6px !important;
+  }
+}
+
+.orderSpan {
+  text-align: center;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 16px;
+  background-color: #054EDB;
+  margin-top: 20px;
+  @include font(400, #fff, 14px);
+  cursor: pointer;
+  line-height: 150%;
+}
+
+.emptyWrapper {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 16px;
+  min-height: 383px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    @include font(700, #8B96B1, 15px);
+    line-height: 150%;
+  }
+
+  a {
+    display: block;
+    margin-top: 24px;
+    padding: 8px 24px;
+    background-color: #054EDB;
+    border-radius: 16px;
+    @include font(500, #fff, 16px);
+    line-height: 125%;
+  }
+}
+
+.yellow {
+  color: #FD9B08 !important;
+}
+
+.aboutDelivery {
+  margin-top: 20px;
+
+  p {
+    text-align: center;
+    @include font(400, #8B96B1, 15px);
+    line-height: 125%;
+  }
+  a {
+    border: none !important;
+    margin: 0 auto !important;
+    text-decoration: underline;
+  }
+}
+.orderButtons {
+  margin-top: 20px;
+  button {
+    height: 44px;
+  }
+  .cancel {
+    margin-top: 8px;
+    background-color: transparent !important;
+    border: 1px solid #D4E3FF !important;
+    @include font(400, #032D80, 14px);
+    color: #032D80 !important;
+    line-height: 150%;
+  }
+}
+.aboutLoginBonus {
+  margin-top: 20px;
+  text-align: center;
+  @include font(500, #171717, 15px);
+  line-height: 150%;
+  span {
+    color: #fd9b08;
+  }
+}

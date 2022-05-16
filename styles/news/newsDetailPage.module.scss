@@ -1,0 +1,113 @@
+@import "../mixins";
+.wrapper {
+  width: 100%;
+  padding: 12px 0 36px 0;
+  flex: 1;
+  @media (max-width: 768px) {
+    background-color: #fff;
+  }
+}
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .newsData {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 318px - 16px);
+    padding: 24px 24px 32px 24px;
+    border-radius: 16px;
+    background-color: #fff;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 0;
+    }
+    h3 {
+      margin: 24px 0;
+      @include font(700, #181818, 20px);
+      line-height: 150%;
+
+      @media (max-width: 768px) {
+        padding: 0 16px;
+        line-height: 24px;
+      }
+    }
+
+    p {
+      @include font(400, #636875, 14px);
+      line-height: 150%;
+
+      @media (max-width: 768px) {
+        padding: 0 16px;
+      }
+    }
+
+    .newsImg {
+      div, img {
+        width: 100%;
+        border-radius: 12px;
+        max-height: 514px !important;
+      }
+    }
+    .date {
+      margin-top: 16px;
+      @include font(400, #8B96B1, 14px);
+      line-height: 150%;
+
+      @media (max-width: 768px) {
+        padding: 0 16px;
+      }
+    }
+    .share {
+      margin-top: 24px;
+
+      @media (max-width: 768px) {
+        padding-left: 16px;
+      }
+      >span {
+        margin-bottom: 8px;
+        display: block;
+        @include font(400, #8B96B1, 15px);
+        line-height: 150%;
+      }
+      button {
+        width: 36px !important;
+        height: 36px !important;
+        margin-right: 16px !important;
+        background: transparent;
+        border: 1px solid #D4E3FF !important;
+        border-radius: 8px !important;
+        &:hover {
+          background-color: #054EDB;
+        }
+        img {
+          pointer-events: none;
+          width: 21px;
+          height: 21px;
+        }
+      }
+    }
+  }
+  .otherNews {
+    width: 318px;
+    padding: 24px 16px;
+    border-radius: 16px;
+    background-color: #fff;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    a {
+      display: block;
+      padding: 8px 20px;
+      background-color: #054EDB;
+      border-radius: 16px;
+      @include font(400,  #fff, 14px);
+      line-height: 150%;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "/styles/mixins";
+.wrapper {
+  padding-bottom: 36px;
+  flex: 1;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .favorites {
+    width: calc(100% - 250px);
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    h3 {
+      @include font(700, #181818, 20px);
+      line-height: 24px;
+    }
+    .itemsWrapper {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}

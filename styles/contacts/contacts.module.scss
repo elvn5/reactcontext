@@ -1,0 +1,175 @@
+@import "/styles/mixins";
+.wrapper {
+  width: 100%;
+  padding: 20px 0 40px 0;
+  flex: 1;
+}
+.content {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.contentRight {
+  width: calc(100% - 226px);
+}
+.contacts {
+  width: 100%;
+  padding: 24px 16px;
+  border-radius: 16px;
+  background-color: #fff;
+  h3 {
+    @include font(700, #181818, 20px);
+  }
+  .contactsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    .line {
+      width: 1px;
+      background-color: #D4E3FF;
+    }
+    .contactsItem {
+      h4 {
+        margin: 10px 0;
+        @include font(500, #181818, 15px);
+        @media (max-width: 992px) and (min-width: 768px) {
+          font-size: 13px;
+        }
+      }
+      li {
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        a {
+          display: flex;
+          align-items: center;
+        }
+        span {
+          @include font(400, #2F2F2F, 15px);
+          margin-left: 10px;
+
+          @media (max-width: 992px) and (min-width: 768px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mapWrapper {
+  width: 100%;
+  padding: 24px 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.feedBack {
+  padding: 24px 16px;
+  border-radius: 16px;
+  background-color: #fff;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  .title {
+    width: 30%;
+    h3 {
+      @include font(700, #181818, 15px);
+    }
+    p {
+      margin-top: 10px;
+      @include font(400, #181818, 14px);
+    }
+  }
+  form {
+    width: 70%;
+    .formBody {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: normal;
+      }
+    }
+    .formDiv {
+      width: 49%;
+      display: flex;
+      flex-direction: column;
+      .formItem {
+        margin: 5px;
+      }
+      textarea {
+        min-height: 200px;
+      }
+    }
+    .formSubmit {
+      display: flex;
+      justify-content: flex-end;
+      @media (max-width: 576px) {
+        justify-content: center;
+      }
+      button {
+        width: calc(50% - 5px);
+        padding: 8px 20px;
+        background-color: #054EDB;
+        border-radius: 16px;
+        @include font(400, #fff, 14px);
+        border: none;
+        &:disabled {
+          background-color: #8B96B1;
+        }
+      }
+    }
+    textarea {
+      height: calc(100% - 5px) !important;
+    }
+    textarea, input {
+      resize: none;
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D4E3FF;
+      height: auto;
+      border-radius: 16px;
+      &::placeholder {
+        color: #8B96B1;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .contentRight {
+    width: 100%;
+  }
+  .contactsWrapper {
+    flex-direction: column;
+  }
+  .line {
+    width: 100% !important;
+    height: 1px;
+    margin: 10px 0;
+  }
+  .contacts {
+
+  }
+
+  .feedBack {
+    flex-direction: column;
+    align-items: center;
+    .title {
+      width: 100%;
+    }
+    form {
+      width: 100%;
+      .formDiv {
+        width: 100%;
+      }
+      flex-direction: column;
+    }
+  }
+}

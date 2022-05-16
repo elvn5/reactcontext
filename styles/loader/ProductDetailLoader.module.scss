@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.slider {
+    width: 40%;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.description {
+    width: calc(60% - 44px);
+    padding-left: 44px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .slider {
+        width: 100%;
+    }
+
+    .description {
+        width: 100%;
+        padding: 0;
+        margin-top: 42px;
+    }
+}

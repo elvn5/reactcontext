@@ -1,0 +1,14 @@
+.wrapper {
+  padding: 12px 0 72px 0;
+  position: relative;
+  flex: 1;
+}
+
+.content {
+
+  .productsWrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

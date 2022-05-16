@@ -1,0 +1,6 @@
+@mixin font($weight, $color, $size) {
+  font-family: 'Inter', sans-serif;
+  font-weight: $weight;
+  color: $color;
+  font-size: $size;
+}
